@@ -41,7 +41,8 @@ function createAttributeDefinition(attrName, value, type) {
         vType = value.type;
 
     if (type === 'string') {
-        const attrDef = typeMapping[type] + defaultSizeMapping[type];
+        const attrDef = typeMapping[value] + defaultSizeMapping[value];
+        console.log('>>>>>', type, attrName, typeMapping[value]);
         return `${tabIt(8)}${_.camelCase(attrName)}: {\n`
             + tabIt(12) + `type: ${attrDef},\n`
             + tabIt(12) + `field: '${attrName}'\n`
